@@ -20,7 +20,7 @@ const csrfProtection = csrf({ cookie: true });  // enable this
 app.use(csrfProtection);  // enable this
 
 // MongoDB connection string
-process.env.MONGO_URI = "mongodb+srv://jokwuoma:NfVkmCxqTKSGUw9i@cluster0.c07r4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+process.env.MONGO_URI = "mongodb+srv://jokwuoma:NfVkmCxqTKSGUw9i@cluster0.c07r4.mongodb.net/";
 const dbUri = process.env.MONGO_URI;
 
 mongoose

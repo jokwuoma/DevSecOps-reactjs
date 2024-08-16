@@ -6,7 +6,7 @@ const Question = require("./Question"); // Adjust the path as necessary to your 
 const { data } = require("./data"); // Adjust the path to where your data.js file is located
 
 // Store my MongoDB connection string in the MONGO_URI environment variable to connect to the database
-process.env.MONGO_URI = "mongodb+srv://jokwuoma:NfVkmCxqTKSGUw9i@cluster0.c07r4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+process.env.MONGO_URI = "mongodb+srv://jokwuoma:NfVkmCxqTKSGUw9i@cluster0.c07r4.mongodb.net/";
 const mongoURI = process.env.MONGO_URI;
 // const mongoURI = 'mongodb+srv://${username}:${password}@cluster0.3x0s7hh.mongodb.net/?appName=mongosh+2.1.5';
 
