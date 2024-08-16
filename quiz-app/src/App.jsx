@@ -1,4 +1,4 @@
-import React from 'react'   // enable this
+// import React from 'react'
 import Quiz from "./Components/Quiz/Quiz";
 
 const App = () => {
