@@ -3,6 +3,8 @@ name: React.js CI
 on:
   pull_request:
     branches: "master"
+  push: # included push for git push commands
+    branches: "master"
 
 jobs:
   frontend-test:
