@@ -21,16 +21,16 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend
-        image: ogochukwuozotta/backend-api:latest
-        ports:
-        - containerPort: 3000
-        env:
-        - name: MONGO_URI
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: mongo-uri
+        - name: backend
+          image: jokwuoma/backend-api:latest # Changed to my username
+          ports:
+            - containerPort: 3000
+          env:
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: mongo-uri
 ---
 apiVersion: v1
 kind: Service
@@ -41,7 +41,6 @@ spec:
   selector:
     app: backend
   ports:
-  - port: 3000
-    protocol: TCP
+    - port: 3000
+      protocol: TCP
   type: ClusterIP
-  

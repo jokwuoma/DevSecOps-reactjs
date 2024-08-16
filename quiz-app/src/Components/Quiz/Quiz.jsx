@@ -23,14 +23,14 @@ const Quiz = () => {
       if (startQuiz) {
         try {
           // const apiUrl = import.meta.env.VITE_REACT_APP_API_URL || 'http://localhost:3000/api/questions';
-          const apiUrl = "http://quizapp.cloudcorehub.com/api/questions"
+          const apiUrl = "http://quizapp.pdocommrig.com/api/questions"    // changed to my DNS, of http://quizapp.pdocommrig.com/api/questions
           const response = await fetch(apiUrl);
           if (!response.ok) throw new Error("Failed to fetch");
           let questions = await response.json();
           questions = questions.map((q) => ({
             ...q,
             options: [q.option1, q.option2, q.option3, q.option4],
-            answer: q.ans, 
+            answer: q.ans,
           }));
           if (questions.length > 0) {
             setData(questions);

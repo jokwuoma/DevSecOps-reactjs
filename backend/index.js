@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors"); // For handling cross-origin requests
-// const helmet = require('helmet'); // Import helmet
-// const csrf = require('csurf'); // Import csurf
-// const cookieParser = require('cookie-parser'); // Import cookie-parser for CSRF token handling
+const helmet = require('helmet'); // Import helmet; enable this
+const csrf = require('csurf'); // Import csurf; enable this
+const cookieParser = require('cookie-parser'); // Import cookie-parser for CSRF token handling; enable this
 
 const app = express();
 const port = 3000;
@@ -12,14 +12,15 @@ require("dotenv").config();
 // Middleware
 app.use(cors()); // Use this to allow cross-origin requests
 app.use(express.json()); // For parsing application/json
-// app.use(helmet()); // Use helmet to set secure HTTP headers
-// app.use(cookieParser()); // Use cookie-parser middleware
+app.use(helmet()); // Use helmet to set secure HTTP headers; enable this
+app.use(cookieParser()); // Use cookie-parser middleware; enable this
 
 // // CSRF protection
-// const csrfProtection = csrf({ cookie: true });
-// app.use(csrfProtection);
+const csrfProtection = csrf({ cookie: true });  // enable this
+app.use(csrfProtection);  // enable this
 
 // MongoDB connection string
+process.env.MONGO_URI = "mongodb+srv://jokwuoma:NfVkmCxqTKSGUw9i@cluster0.c07r4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const dbUri = process.env.MONGO_URI;
 
 mongoose
